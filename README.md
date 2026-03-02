@@ -1,6 +1,6 @@
 # OmniMonaco
 
-**OmniMonaco** é uma extensão para navegador (Chrome/Edge/Brave) que atua como um copiloto inteligente, gerando código diretamente em editores online baseados no **Monaco Editor**.
+**OmniMonaco** é uma extensão para navegador Chrome que atua como um copiloto inteligente, gerando código diretamente em editores online baseados no **Monaco Editor**.
 
 Diferente de outros copilotos fechados, o OmniMonaco é universal: ele foi projetado para trabalhar em perfeita sintonia com o **[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** (um gateway de IA de código aberto que fornece um endpoint único compatível com OpenAI para mais de 36 provedores).
 
