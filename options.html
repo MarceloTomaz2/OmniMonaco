@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniMonaco - Configurações</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-color: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --border: #334155;
+      --success: #10b981;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: var(--card-bg);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 450px;
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      text-align: center;
+      background: linear-gradient(90deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background-color: rgba(15, 23, 42, 0.6);
+      color: var(--text-color);
+      font-size: 14px;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="text"]:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    button:hover {
+      background-color: var(--primary-hover);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    #status {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--success);
+      min-height: 20px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Configurações do OmniMonaco</h1>
+
+    <div class="form-group">
+      <label for="apiUrl">URL da API</label>
+      <input type="text" id="apiUrl" placeholder="https://sua-api.com/v1/chat/completions">
+    </div>
+
+    <div class="form-group">
+      <label for="modelSelect">Seleção de Modelo</label>
+      <select id="modelSelect">
+        <option value="openai/gpt-4.1-mini">openai/gpt-4.1-mini</option>
+        <option value="gpt-4o-mini">gpt-4o-mini</option>
+        <option value="claude-3-haiku-20240307">claude-3-haiku</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="apiKey">API Key (Opcional)</label>
+      <input type="text" id="apiKey" placeholder="sk-...">
+    </div>
+
+    <div class="form-group">
+      <label for="temperature">Temperatura (0.0 a 1.0)</label>
+      <input type="text" id="temperature" placeholder="0.1">
+    </div>
+
+    <button id="saveBtn">Salvar Configurações</button>
+    <div id="status"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+
+</html>

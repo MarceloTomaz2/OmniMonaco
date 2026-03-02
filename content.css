@@ -1,0 +1,112 @@
+/* OmniMonaco floating UI */
+#omni-monaco-container {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    max-width: 90vw;
+    background: #1e1e1e;
+    border: 1px solid #454545;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 2147483647;
+    /* Max z-index */
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #cccccc;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease-in-out;
+}
+
+#omni-monaco-container.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#omni-monaco-header {
+    padding: 8px 12px;
+    background: #252526;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 1px solid #333333;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#omni-monaco-header-title {
+    color: #60a5fa;
+    font-weight: bold;
+}
+
+#omni-monaco-input-wrapper {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+}
+
+#omni-monaco-input {
+    width: 100%;
+    background: #3c3c3c;
+    border: 1px solid #007acc;
+    color: #ffffff;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 3px;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px rgba(0, 122, 204, 0.5);
+}
+
+#omni-monaco-input::placeholder {
+    color: #888888;
+}
+
+#omni-monaco-footer {
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #888888;
+    background: #252526;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top: 1px solid #333333;
+}
+
+#omni-monaco-loading {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #60a5fa;
+    padding: 0 12px 12px 12px;
+}
+
+/* Spinner */
+.omni-monaco-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(96, 165, 250, 0.3);
+    border-radius: 50%;
+    border-top-color: #60a5fa;
+    animation: omni-monaco-spin 1s ease-in-out infinite;
+}
+
+@keyframes omni-monaco-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#omni-monaco-error {
+    display: none;
+    color: #ef4444;
+    font-size: 12px;
+    padding: 0 12px 12px 12px;
+    word-break: break-word;
+}

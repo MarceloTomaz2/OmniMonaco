@@ -1,0 +1,20 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Private files (backups, temporary)
+*.bak
+*.tmp
+*.log
+llm.txt
+# Local prompt files
+prompt.md
+
+# Local Config
+.vs/
+.vscode/
+
+# Build and node (if any in future)
+node_modules/
+dist/
+package-lock.json (if npmed)
